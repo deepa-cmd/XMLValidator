@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Results>
+    <Var>
+        <Name>Name</Name>
+        <X>123</X>
+        <Value>mandatory</Value>
+        <Y_imag>optional</Y_imag>
+    </Var>
+    <Error>
+        <jp_JP>jpJp</jp_JP>
+        <zh_CN>zhCN</zh_CN>
+        <kr_KO>krKO</kr_KO>
+    </Error>
+
+</Results>

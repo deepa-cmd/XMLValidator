@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="Results">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="Var" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:all>
+              <xsd:element name="Name" type="nameType" maxOccurs="1"/>
+              <xsd:element ref="mandatory" minOccurs="1" maxOccurs="1"/>
+              <xsd:element ref="optional" minOccurs="0" maxOccurs="1"/>
+              <xsd:element name="X" minOccurs="0" maxOccurs="1"/>
+            </xsd:all>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Error" type="internationalType" minOccurs="0" />
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="nameType" mixed="true">
+    <xsd:all>
+      <xsd:element name="Name" type="nameType" minOccurs="0" />
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="internationalType" mixed="true">
+    <xsd:all>
+      <xsd:element name="jp_JP" type="xsd:string" minOccurs="0" />
+      <xsd:element name="zh_CN" type="xsd:string" minOccurs="0" />
+      <xsd:element name="kr_KO" type="xsd:string" minOccurs="0" />
+    </xsd:all>
+  </xsd:complexType>
+
+<xsd:element name="mandatory" abstract="true" />
+<xsd:element name="Value" type="xsd:string" substitutionGroup="mandatory" />
+<xsd:element name="Y_real" type="xsd:string" substitutionGroup="mandatory"/>
+<xsd:element name="Y_ampl" type="xsd:string" substitutionGroup="mandatory"/>
+
+<xsd:element name="optional" abstract="true" />
+<xsd:element name="Y_imag" type="xsd:string" substitutionGroup="optional" />
+<xsd:element name="Y_phase" type="xsd:string" substitutionGroup="optional"/>
+
+</xsd:schema>
+
