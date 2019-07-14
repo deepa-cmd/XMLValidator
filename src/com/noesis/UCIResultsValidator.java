@@ -34,7 +34,7 @@ public class UCIResultsValidator {
 	 * @throws SAXException
 	 */
 	public UCIResultsValidator(String xsdFilePath) throws SAXException {
-		File xsdFile = new File(getClass().getResource(xsdFilePath).getPath());
+		File xsdFile = new File(xsdFilePath);
 		SchemaFactory factory = SchemaFactory.newInstance(schemaLang);
 		Schema schema = factory.newSchema(xsdFile);
 		validator = schema.newValidator();
